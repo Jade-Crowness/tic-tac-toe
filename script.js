@@ -3,38 +3,34 @@ const gameCell = document.querySelectorAll('.gameCell')
 const gameBoard = (() => {
 
     const playerX = "X";
-    const playerO = "0";
+    const playerO = "O";
+
+    let currentPlayer = playerX;
 
     const getPlayerX = () => playerX;
     const getPlayerO = () => playerO;
 
     const getCurrentPlayer = () => currentPlayer;
 
-    return {getPlayerX, getPlayerO, getCurrentPlayer};
+    const changePlayer = function() {
+        if (currentPlayer === playerX) {
+            currentPlayer = playerO;
+        } else {
+            currentPlayer = playerX;
+        }
+    }
+
+    return {getPlayerX, getPlayerO, getCurrentPlayer, changePlayer};
 
 })();
 
-const players = {
-    playerX: gameBoard.getPlayerX(),
-    playerO: gameBoard.getPlayerO(),
-    currentPlayer: gameBoard.getPlayerX(),
-}
-
-const changePlayer = function() {
-    if (players.currentPlayer === "X") {
-        players.currentPlayer = "O"
-    } else {
-        players.currentPlayer = "X"
-    }
-};
-
 gameCell.forEach(function(cell) {
-
     cell.addEventListener('click', function() {
         if (cell.textContent != "") {
         return;
         };
-        cell.textContent = players.currentPlayer;
-        changePlayer();
+
+        cell.textContent = gameBoard.getCurrentPlayer();
+        gameBoard.changePlayer();
     })
 })

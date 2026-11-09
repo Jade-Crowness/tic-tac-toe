@@ -12,6 +12,8 @@ const gameBoard = (() => {
 
     const getCurrentPlayer = () => currentPlayer;
 
+    const winningConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [1, 5, 8], [2, 5, 6]];
+
     const changePlayer = function() {
         if (currentPlayer === playerX) {
             currentPlayer = playerO;
@@ -20,13 +22,15 @@ const gameBoard = (() => {
         }
     }
 
-    return {getPlayerX, getPlayerO, getCurrentPlayer, changePlayer};
+    const showWinningConditions = () => winningConditions;
+
+    return {getPlayerX, getPlayerO, getCurrentPlayer, changePlayer, showWinningConditions};
 
 })();
 
 gameCell.forEach(function(cell) {
     cell.addEventListener('click', function() {
-        if (cell.textContent != "") {
+        if (cell.textContent != "" || meow == true) {
         return;
         };
 
@@ -34,3 +38,4 @@ gameCell.forEach(function(cell) {
         gameBoard.changePlayer();
     })
 })
+

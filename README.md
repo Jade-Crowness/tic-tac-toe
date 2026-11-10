@@ -1,6 +1,6 @@
-# tic-tac-toe       
+# Tic Tac Toe       
 
-## Aim Of The Project :    
+## Aim of The Project :    
 
 I) Getting Understanding of Closure.    
 II) Getting Understanding of Private Variables.     

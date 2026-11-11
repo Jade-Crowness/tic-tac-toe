@@ -19,7 +19,12 @@ const gameBoard = (function() {
             const c = cells[winCondition[2]];
 
             if (a == b && b == c && a != "") {
-                console.log(`${a} won!`);
+                for (let i = 0; i < gameCells.length; i++) {
+                    const win_index = parseInt(gameCells[i].getAttribute("cell-index"));
+                    if (winCondition.includes(win_index)) {
+                        gameCells[win_index].classList.add('win');
+                    }
+                }
                 gameOver = true;
                 return;
             }

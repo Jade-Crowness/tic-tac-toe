@@ -1,0 +1,16 @@
+@font-face {
+    font-family: chatime;
+    src: url(./fonts/chatime/chatime.otf);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+h1 {
+    color: aliceblue;
+    font-family: chatime;
+}

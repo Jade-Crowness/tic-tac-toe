@@ -1,4 +1,5 @@
-const gameCells = document.querySelectorAll('.gameCell');
+const gameCells = document.querySelectorAll(".gameCell");
+const resetData = document.querySelector("#resetData")
 
 const gameBoard = (function() {
 
@@ -22,13 +23,23 @@ const gameBoard = (function() {
                 for (let i = 0; i < gameCells.length; i++) {
                     const win_index = parseInt(gameCells[i].getAttribute("cell-index"));
                     if (winCondition.includes(win_index)) {
-                        gameCells[win_index].classList.add('win');
+                        gameCells[win_index].classList.add("winningCell");
                     }
                 }
                 gameOver = true;
                 return;
             }
         }
+    }
+
+    function resetAllData() {
+        cells = ["", "", "", "", "", "", "", "", ""];
+        gameCells.forEach(function(cell) {
+            cell.textContent = "";
+            cell.classList.remove("winningCell");
+        });
+        currentPlayer = playerX;
+        gameOver = false;
     }
 
     function cellClicked() {
@@ -41,10 +52,12 @@ const gameBoard = (function() {
         checkWinner();
     }
 
-    return {cellClicked};
+    return {cellClicked, resetAllData};
 
 })();
 
 gameCells.forEach(function(cell) {
     cell.addEventListener('click', gameBoard.cellClicked);
 })
+
+resetData.addEventListener('click', gameBoard.resetAllData)

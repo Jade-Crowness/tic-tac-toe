@@ -14,5 +14,10 @@ II) Create an array which correspondes to the winning condition. (ﾒ)
 III) create a function method inside IIFE which lets "X" or "Y" placed upon the cell while clicking on it and does not let the player to change the value by clicking on it again. (ﾒ)   
 IV)  Check for winner. (ﾒ)      
 V) Changing the winning cell background color to indicate winning player. (ﾒ)      
-VI) Adding a restrart button. ()      
-VII) Finalizing html and css design. ()      
+VI) Adding a restrart button. (ﾒ)      
+VII) Finalizing html and css design. (ﾒ)      
+
+## Compatibility :     
+
+Mac Os and Windows : High   
+Others : Low - Medium   

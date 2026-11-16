@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.roboto-normal {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+}
+
+#gameboard {
+    display: grid;
+    height: 500px;
+    width: 500px;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    border: 5px solid aliceblue;
+}
+
+.gameCell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid aliceblue;
+    background-color: #bfe6d4;
+    font-size: 3rem;
+    color: #18263a;
+}
+
+.gameCell:hover {
+    cursor: pointer;
+}
+
+.winningCell {
+    background-color: #18263a;
+    color: #bfe6d4;
+}
+
+#resetData {
+    cursor: pointer;
+    font-size: 1.2rem;
+    width: 100px;
+    height: 30px;
+    border-radius: 25px;
+    text-align: center;
+    background-color: #091540;
+    color: aliceblue;
+    font-family: roboto-normal;
+}
+
+#resetData:hover {
+    background-color: aliceblue;
+    color: #091540;
+}
